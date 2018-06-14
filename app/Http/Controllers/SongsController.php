@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Validator;
 use App\Songs;
 use App\User;
 use Auth;
-use Carbon\Carbon;
 
 
 class SongsController extends Controller{
@@ -23,6 +22,19 @@ class SongsController extends Controller{
         );
         return view('partials.lyric_page',$data);
     }
+
+    public function findLyrics($id){
+        $findLyrics = Songs::find($id); 
+        $data['lyrics'][]= array(
+            'id'    => $findLyrics->id,
+            'title' => $findLyrics->title,
+            'artist' => $findLyrics->artist,
+            'lyrics' => $findLyrics->lyrics,
+            'user'  =>  User::with('songs')->find($findLyrics->user_id)->name,
+            'date' => $findLyrics->created_at,
+        );
+        return view('partials.edit',$data);
+    }    
 
 	public function processSongs(Request $request){
  
@@ -48,7 +60,8 @@ class SongsController extends Controller{
             if ($request->has('id') & ($request->get('id') > 0) ) {         
                 Songs::find($request->get('id'))->update($fields);
             } else{ Songs::create($fields); }
-            return back();
+            return redirect('home');
+
         }else {            
             return redirect()->back()
             ->withErrors($validateRegister)
@@ -58,7 +71,6 @@ class SongsController extends Controller{
     public function destroy($id)
     {
         Songs::find($id)->delete(); 
-        //Payment::where('employee_id', $id)->delete();
         return 'Successfully Deleted';
     }       
 }

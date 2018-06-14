@@ -65,7 +65,7 @@
                                         <td> {{$song['date']}} </td>
                                         <td> {{$song['user']}} </td>
                                         <td>
-                                            <a href="#" data-toggle="modal" data-target="#addSong{{$song['id']}}">Edit</a>
+                                            <a href="/edit/{{$song['id']}}" >Edit</a>
                                             <a href="#" onclick="updateStatus({id:{{ $song['id']}},name:'title'})" data-toggle="tooltip" title="Delete" data-toggle="modal" data-target="#deleteSong">Delete</a>
                                         </td>
                                     </tr>
@@ -85,3 +85,4 @@
                 <!-- /.row -->
             </div>
 @endsection
+<!-- data-toggle="modal" data-target="#addSong{{$song['id']}}" -->

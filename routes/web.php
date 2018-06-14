@@ -19,6 +19,7 @@ Route::get('/home/{id?}', 'HomeController@index')->name('home');
 Route::post('/home', 'HomeController@index')->name('home');
 
 Route::get('/page/{id}', 'SongsController@showLyrics');
+Route::get('/edit/{id}', 'SongsController@findLyrics');
 
 Route::post('/addSong', 'SongsController@processSongs');
 Route::post('/addSong/{id?}', 'SongsController@processSongs');

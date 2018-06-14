@@ -12,13 +12,13 @@
     <title>SB Admin</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/admin/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/admin/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/admin/sb-admin.css" rel="stylesheet">
+    <link href="/css/admin/sb-admin.css" rel="stylesheet">
 
     <!-- Morris Charts CSS -->
-    <link href="css/admin/plugins/morris.css" rel="stylesheet">
+    <link href="/css/admin/plugins/morris.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +31,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+
+
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet"> 
 </head>
 
@@ -54,19 +56,33 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="js/admin/jquery.js"></script>
+    <script src="/js/admin/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/admin/bootstrap.min.js"></script>
+    <script src="/js/admin/bootstrap.min.js"></script>
 
     <!-- Morris Charts JavaScript -->
-    <script src="js/admin/plugins/morris/raphael.min.js"></script>
+<!--     <script src="js/admin/plugins/morris/raphael.min.js"></script>
     <script src="js/admin/plugins/morris/morris.min.js"></script>
-    <script src="js/admin/plugins/morris/morris-data.js"></script>
+    <script src="js/admin/plugins/morris/morris-data.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>    .
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type="text/javascript" src="{{ asset('js/jquery.colorbox-min.js') }}"></script>
+
+<!--     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.colorbox-min.js') }}"></script> -->
     <script src="{{ asset('js/custom.js') }}"></script> 
+ <script>
+
+$(document).ready(function(){ 
+
+    $('#summernote').summernote();
+});
+
+ </script>
+
+
+ 
+
 </body>
 
 </html>
